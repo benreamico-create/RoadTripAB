@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — Road Trip Alberta
+   ============================================================ */
+:root {
+  /* Brand Colors */
+  --color-pine: #1A2F23;
+  --color-pine-dark: #0F1A14;
+  --color-pine-light: #243D2F;
+  --color-glacial: #A4D8E1;
+  --color-glacial-light: #C5E8EE;
+  --color-glacial-dark: #7DC4D0;
+  --color-gold: #FFB800;
+  --color-gold-dark: #E6A600;
+  --color-gold-light: #FFCC40;
+
+  /* Neutral — Rocky Mountain Stone */
+  --color-stone-50: #FAFAF8;
+  --color-stone-100: #F5F4F0;
+  --color-stone-200: #E8E6E0;
+  --color-stone-900: #1C1A16;
+
+  /* Semantic */
+  --background: var(--color-stone-50);
+  --foreground: var(--color-stone-900);
+
+  /* Glassmorphism tokens */
+  --glass-bg: rgba(255, 255, 255, 0.10);
+  --glass-border: rgba(255, 255, 255, 0.20);
+  --glass-shadow: 0 8px 32px rgba(26, 47, 35, 0.25);
+  --glass-blur: blur(16px);
+
+  /* shadcn/ui base variables */
+  --radius: 0.625rem;
+  --card: var(--color-stone-50);
+  --card-foreground: var(--color-stone-900);
+  --popover: var(--color-stone-50);
+  --popover-foreground: var(--color-stone-900);
+  --primary: var(--color-pine);
+  --primary-foreground: #ffffff;
+  --secondary: var(--color-stone-100);
+  --secondary-foreground: var(--color-stone-900);
+  --muted: var(--color-stone-100);
+  --muted-foreground: #6B7280;
+  --accent: var(--color-glacial);
+  --accent-foreground: var(--color-pine);
+  --destructive: #EF4444;
+  --border: var(--color-stone-200);
+  --input: var(--color-stone-200);
+  --ring: var(--color-glacial);
+}
+
+/* ============================================================
+   TAILWIND v4 THEME MAPPING
+   Maps CSS vars to Tailwind utility classes
+   e.g. bg-pine, text-gold, border-glacial
+   ============================================================ */
+@theme inline {
+  --color-pine: var(--color-pine);
+  --color-pine-dark: var(--color-pine-dark);
+  --color-pine-light: var(--color-pine-light);
+  --color-glacial: var(--color-glacial);
+  --color-glacial-light: var(--color-glacial-light);
+  --color-glacial-dark: var(--color-glacial-dark);
+  --color-gold: var(--color-gold);
+  --color-gold-dark: var(--color-gold-dark);
+  --color-gold-light: var(--color-gold-light);
+  --color-stone-50: var(--color-stone-50);
+  --color-stone-100: var(--color-stone-100);
+  --color-stone-200: var(--color-stone-200);
+  --color-stone-900: var(--color-stone-900);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans, sans-serif);
+  }
+
+  /* Glacial blue focus ring for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-glacial);
+    outline-offset: 2px;
+  }
+
+  /* Smooth image rendering */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ============================================================
+   GLASSMORPHISM COMPONENT CLASSES
+   ============================================================ */
+@layer components {
+  /* Default glass card — used on light/image backgrounds */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Dark glass — for pine-green sections */
+  .glass-card-dark {
+    background: rgba(26, 47, 35, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(164, 216, 225, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Gold-accented glass — hero booking widget */
+  .glass-card-booking {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 184, 0, 0.25);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  /* Navbar glass — saturate for vivid backdrop */
+  .glass-nav {
+    background: rgba(26, 47, 35, 0.80);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(164, 216, 225, 0.10);
+  }
+}
