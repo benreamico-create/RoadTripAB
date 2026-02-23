@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import { MapPin, Plane, Star, CheckCircle } from 'lucide-react'
 import { Switch } from '@/components/ui/switch'
 import { Badge } from '@/components/ui/badge'
-import { formatCAD } from '@/lib/utils'
+import { formatCAD, EASE_OUT_EXPO } from '@/lib/utils'
 
 const SERVICES = [
   {
@@ -82,7 +82,7 @@ const cardVariants = {
     transition: {
       delay: i * 0.15,
       duration: 0.65,
-      ease: [0.22, 1, 0.36, 1],
+      ease: EASE_OUT_EXPO,
     },
   }),
 }

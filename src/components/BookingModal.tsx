@@ -16,7 +16,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { cn } from '@/lib/utils'
+import { cn, EASE_OUT_EXPO } from '@/lib/utils'
 
 const ALBERTA_CITIES = [
   'Calgary', 'Banff', 'Canmore', 'Jasper', 'Lake Louise',
@@ -97,7 +97,7 @@ export function BookingModal({ open, onClose, prefilledRoute }: BookingModalProp
               key="success"
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.35, ease: EASE_OUT_EXPO }}
               className="text-center py-8"
             >
               <div className="w-16 h-16 rounded-full bg-glacial/20 flex items-center justify-center mx-auto mb-4">

@@ -17,6 +17,7 @@ import { useState } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { ChevronDown, Star, Users, Clock } from 'lucide-react'
 import { BookingModal } from '@/components/BookingModal'
+import { EASE_OUT_EXPO } from '@/lib/utils'
 
 const ALBERTA_CITIES = [
   'Calgary YYC Airport', 'Banff', 'Canmore', 'Jasper',
@@ -34,7 +35,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.75, ease: EASE_OUT_EXPO },
   },
 }
 
@@ -141,7 +142,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.35, ease: EASE_OUT_EXPO }}
             >
               <div className="glass-card-booking rounded-2xl p-6 lg:p-8">
                 <h2 className="text-white font-bold text-xl mb-1">Plan Your Journey</h2>

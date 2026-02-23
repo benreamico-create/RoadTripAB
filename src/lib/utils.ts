@@ -1,6 +1,9 @@
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
+/** Cubic bezier easing typed as a tuple for motion/react compatibility */
+export const EASE_OUT_EXPO: [number, number, number, number] = [0.22, 1, 0.36, 1]
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }

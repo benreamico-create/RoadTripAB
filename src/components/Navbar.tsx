@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Menu, X, Mountain } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, EASE_OUT_EXPO } from '@/lib/utils'
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
@@ -50,7 +50,7 @@ export function Navbar() {
       )}
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">

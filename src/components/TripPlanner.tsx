@@ -12,7 +12,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { cn } from '@/lib/utils'
+import { cn, EASE_OUT_EXPO } from '@/lib/utils'
 
 const STEPS = [
   { id: 1, title: 'Vehicle', icon: Car },
@@ -168,7 +168,7 @@ export function TripPlanner() {
                   key="success"
                   initial={{ opacity: 0, scale: 0.92 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.4, ease: EASE_OUT_EXPO }}
                   className="text-center py-10"
                 >
                   <div className="w-20 h-20 rounded-full bg-glacial/20 flex items-center justify-center mx-auto mb-5">

@@ -18,7 +18,7 @@ import { ArrowRight, Clock, MapPin, Navigation } from 'lucide-react'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { BookingModal } from '@/components/BookingModal'
-import { formatCAD } from '@/lib/utils'
+import { formatCAD, EASE_OUT_EXPO } from '@/lib/utils'
 
 const ROUTES = [
   {
@@ -96,7 +96,7 @@ export function RouteExplorer() {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ delay: index * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: index * 0.1, duration: 0.6, ease: EASE_OUT_EXPO }}
                 className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col ${
                   route.featured ? 'xl:col-span-2' : ''
                 }`}
