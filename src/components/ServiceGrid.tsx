@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion, AnimatePresence, type Variants } from 'motion/react'
 import { MapPin, Plane, Star, CheckCircle } from 'lucide-react'
 import { Switch } from '@/components/ui/switch'
 import { Badge } from '@/components/ui/badge'
@@ -73,7 +73,7 @@ const SERVICES = [
   },
 ]
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50, scale: 0.96 },
   visible: (i: number) => ({
     opacity: 1,

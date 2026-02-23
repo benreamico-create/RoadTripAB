@@ -14,7 +14,7 @@
  */
 
 import { useState } from 'react'
-import { motion, useScroll, useTransform } from 'motion/react'
+import { motion, useScroll, useTransform, type Variants } from 'motion/react'
 import { ChevronDown, Star, Users, Clock } from 'lucide-react'
 import { BookingModal } from '@/components/BookingModal'
 import { EASE_OUT_EXPO } from '@/lib/utils'
@@ -25,12 +25,12 @@ const ALBERTA_CITIES = [
   'Calgary Downtown', 'Icefields Parkway',
 ]
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,

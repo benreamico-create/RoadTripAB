@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion, AnimatePresence, type Variants } from 'motion/react'
 import { Menu, X, Mountain } from 'lucide-react'
 import { cn, EASE_OUT_EXPO } from '@/lib/utils'
 
@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { label: 'Map', href: '#map' },
 ]
 
-const drawerVariants = {
+const drawerVariants: Variants = {
   closed: { height: 0, opacity: 0 },
   open: {
     height: 'auto',
@@ -21,7 +21,7 @@ const drawerVariants = {
   },
 }
 
-const linkVariants = {
+const linkVariants: Variants = {
   closed: { x: -20, opacity: 0 },
   open: { x: 0, opacity: 1 },
 }
